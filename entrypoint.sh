@@ -20,9 +20,6 @@ git init
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR_EMAIL}"
 touch .nojekyll
-if [ -z "${CUSTOM_DOMAIN}" ]
-then
-  echo ${CUSTOM_DOMAIN} > CNAME
-fi
+echo ${CUSTOM_DOMAIN} > CNAME
 git add .
 git commit -m "published by GitHub Actions"
